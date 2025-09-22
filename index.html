@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VHCC Email Signature Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+        color: #1f2937;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-6 flex items-center justify-center min-h-screen">
+    <div
+      class="bg-white rounded-xl shadow-2xl p-8 max-w-4xl w-full flex flex-col lg:flex-row gap-8"
+    >
+      <!-- Input Form Section -->
+      <div class="w-full lg:w-1/2">
+        <h1 class="text-3xl font-semibold mb-6 text-gray-800">
+          Email Signature Generator
+        </h1>
+        <p class="text-gray-600 mb-8">
+          Enter your information below to create your professional email
+          signature. Once generated, you can copy the signature and paste it
+          into your email client's settings.
+        </p>
+
+        <form id="signature-form" class="space-y-4">
+          <div class="space-y-1">
+            <label for="name" class="block text-sm font-medium text-gray-700"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="space-y-1">
+            <label for="title" class="block text-sm font-medium text-gray-700"
+              >Title</label
+            >
+            <input
+              type="text"
+              id="title"
+              name="title"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Your Title"
+              required
+            />
+          </div>
+          <div class="space-y-1">
+            <label for="unit" class="block text-sm font-medium text-gray-700"
+              >Unit/Department</label
+            >
+            <input
+              type="text"
+              id="unit"
+              name="unit"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Your Unit/Department"
+            />
+          </div>
+          <div class="space-y-1">
+            <label for="phone" class="block text-sm font-medium text-gray-700"
+              >Phone</label
+            >
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Phone Number"
+            />
+          </div>
+          <div class="space-y-1">
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="address1"
+              class="block text-sm font-medium text-gray-700"
+              >Address Line 1</label
+            >
+            <input
+              type="text"
+              id="address1"
+              name="address1"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="100 VHCC Drive"
+            />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="address2"
+              class="block text-sm font-medium text-gray-700"
+              >Address Line 2</label
+            >
+            <input
+              type="text"
+              id="address2"
+              name="address2"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Abingdon, VA 24210"
+            />
+          </div>
+          <div class="space-y-1">
+            <label for="website" class="block text-sm font-medium text-gray-700"
+              >Website URL</label
+            >
+            <input
+              type="url"
+              id="website"
+              name="website"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="e.g., https://www.vhcc.edu"
+            />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="facebookUrl"
+              class="block text-sm font-medium text-gray-700"
+              >Facebook URL</label
+            >
+            <input
+              type="url"
+              id="facebookUrl"
+              name="facebookUrl"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="e.g., https://facebook.com/vhcc"
+            />
+          </div>
+          <div class="space-y-1">
+            <label for="xURL" class="block text-sm font-medium text-gray-700"
+              >X (Twitter) URL</label
+            >
+            <input
+              type="url"
+              id="xURL"
+              name="xURL"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="e.g., https://x.com/vhcc"
+            />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="instagramURL"
+              class="block text-sm font-medium text-gray-700"
+              >Instagram URL</label
+            >
+            <input
+              type="url"
+              id="instagramURL"
+              name="instagramURL"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="e.g., https://instagram.com/vhcc"
+            />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="linkedInURL"
+              class="block text-sm font-medium text-gray-700"
+              >LinkedIn URL</label
+            >
+            <input
+              type="url"
+              id="linkedInURL"
+              name="linkedInURL"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="e.g., https://linkedin.com/company/vhcc"
+            />
+          </div>
+          <div class="space-y-1">
+            <label
+              for="youTubeURL"
+              class="block text-sm font-medium text-gray-700"
+              >YouTube URL</label
+            >
+            <input
+              type="url"
+              id="youTubeURL"
+              name="youTubeURL"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="e.g., https://youtube.com/vhcc"
+            />
+          </div>
+
+          <!-- ...existing code... -->
+
+          <button
+            type="submit"
+            class="w-full px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition-colors focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          >
+            Generate Signature
+          </button>
+        </form>
+      </div>
+
+      <!-- Preview and Copy Section -->
+      <div class="w-full lg:w-1/2 flex flex-col items-center">
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800 self-start">
+          Signature Preview
+        </h2>
+        <div
+          id="signature-preview"
+          class="p-6 border border-gray-300 rounded-md bg-white w-full shadow-inner mb-6 transition-all duration-300 transform"
+        >
+          <!-- Signature will be generated here -->
+          <p class="text-gray-500 text-center bg-transparent">
+            Your signature will appear here after you fill out the form.
+          </p>
+        </div>
+        <button
+          id="copy-button"
+          class="w-full px-4 py-2 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700 transition-colors focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          style="display: none"
+        >
+          Copy to Clipboard
+        </button>
+        <div
+          id="message-box"
+          class="mt-4 p-3 bg-green-100 text-green-800 rounded-md text-sm transition-all duration-300 opacity-0 transform scale-95"
+        >
+          Signature copied to clipboard!
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("signature-form");
+      const preview = document.getElementById("signature-preview");
+      const copyButton = document.getElementById("copy-button");
+      const messageBox = document.getElementById("message-box");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        generateSignature();
+      });
+
+      copyButton.addEventListener("click", function () {
+        copySignature();
+      });
+
+      function generateSignature() {
+        const name = document.getElementById("name").value;
+        const title = document.getElementById("title").value;
+        const unit = document.getElementById("unit").value;
+        const address1 = document.getElementById("address1").value;
+        const address2 = document.getElementById("address2").value;
+        const address3 = document.getElementById("address3").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const website = document.getElementById("website").value;
+        const facebookUrl = document.getElementById("facebookUrl").value;
+        const xURL = document.getElementById("xURL").value;
+        const linkedInURL = document.getElementById("linkedInURL").value;
+        const youTubeURL = document.getElementById("youTubeURL").value;
+        const instagramURL = document.getElementById("instagramURL").value;
+
+        const signatureHtml = `
+          <p style="background-color: #FFFFFF; border: none;">
+                <strong style="border: none;">${name}</strong><br />
+                ${title}<br />
+                ${unit ? `${unit}` : ""}<br />
+                <strong style="border: none;">Virginia Highlands Community College</strong><br /><br />
+                ${address1 ? `${address1}` : "100 VHCC Drive"}<br />
+                ${address2 ? `${address2}` : "Abingdon, VA 24210"}<br /><br />
+                <strong style="border: none;">phone:</strong> ${
+                  phone ? `${phone}` : ""
+                }<br />
+                <strong style="border: none;">email:</strong> <a href="mailto:${email}" style="color: #4578ba !important;text-decoration: underline;border: none;">${email}</a><br />
+                <strong style="border: none;">web:</strong> ${
+                  website
+                    ? `<a href="${website}" style="color: #4578ba !important;text-decoration: underline; border: none;">${website.replace(
+                        /^(https?:\/\/)/,
+                        ""
+                      )}</a>`
+                    : `<a href="https://www.vhcc.edu" style="color: #4578ba !important;text-decoration: underline; border: none;">www.vhcc.edu</a>`
+                }<br/><br />
+                ${
+                  facebookUrl
+                    ? `<a href="${facebookUrl}" style="color: #4578ba !important;text-decoration: underline; border: none;">Facebook</a>`
+                    : `<a href="https://www.facebook.com/VirginiaHighlands"  style="color: #4578ba !important;text-decoration: underline; border: none;">Facebook</a>`
+                } 
+                ${
+                  instagramURL
+                    ? `<a href="${instagramURL}"  style="color: #4578ba !important;text-decoration: underline; border: none;">Instagram</a>`
+                    : `<a href="https://www.instagram.com/virginiahighlands_cc"  style="color: #4578ba !important;text-decoration: underline; border: none;">Instagram</a>`
+                } 
+                ${
+                  xURL
+                    ? `<a href="${xURL}"  style="color: #4578ba !important;text-decoration: underline; border: none;">X</a>`
+                    : `<a href="https://x.com/vhcc"  style="color: #4578ba !important;text-decoration: underline; border: none;">X</a>`
+                } 
+                ${
+                  youTubeURL
+                    ? `<a href="${youTubeURL}"  style="color: #4578ba !important;text-decoration: underline; border: none;">YouTube</a>`
+                    : `<a href="https://www.youtube.com/user/VHCCAbingdon"  style="color: #4578ba !important;text-decoration: underline; border: none;">YouTube</a>`
+                } 
+                ${
+                  linkedInURL
+                    ? `<a href="${linkedInURL}"  style="color: #4578ba !important;text-decoration: underline; border: none;">LinkedIn</a>`
+                    : `<a href="https://www.linkedin.com/school/virginia-highlands-community-college/"  style="color: #4578ba !important;text-decoration: underline; border: none;">LinkedIn</a>`
+                }
+                <br /><br />
+                <span class="bg-[#4578ba] text-white bold"><strong>You're gonna love where you go.</strong></span>
+              </p>
+            `;
+
+        preview.innerHTML = signatureHtml;
+        copyButton.style.display = "block";
+      }
+
+      function copySignature() {
+        // We create a temporary element to hold the HTML to be copied
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = preview.innerHTML;
+        document.body.appendChild(tempDiv);
+
+        // Select the content
+        const range = document.createRange();
+        range.selectNode(tempDiv);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+
+        // Execute the copy command
+        let success = false;
+        try {
+          success = document.execCommand("copy");
+        } catch (err) {
+          console.error("Failed to copy", err);
+        }
+
+        // Clean up the temporary element
+        window.getSelection().removeAllRanges();
+        document.body.removeChild(tempDiv);
+
+        if (success) {
+          showMessageBox();
+        } else {
+          console.error("Failed to copy signature.");
+        }
+      }
+
+      function showMessageBox() {
+        messageBox.style.opacity = "1";
+        messageBox.style.transform = "scale(1)";
+        setTimeout(() => {
+          messageBox.style.opacity = "0";
+          messageBox.style.transform = "scale(0.95)";
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
