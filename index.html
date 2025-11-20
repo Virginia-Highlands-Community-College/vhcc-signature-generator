@@ -211,8 +211,8 @@
               id="facebookUrl"
               name="facebookUrl"
               class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-              placeholder="e.g., https://facebook.com/vhcc"
-              value="https://facebook.com/vhcc"
+              placeholder="https://www.facebook.com/VirginiaHighlands"
+              value="https://www.facebook.com/VirginiaHighlands"
             />
           </div>
           <div class="space-y-1">
@@ -226,7 +226,7 @@
               id="xURL"
               name="xURL"
               class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-              placeholder="e.g., https://x.com/vhcc"
+              placeholder="https://x.com/vhcc"
               value="https://x.com/vhcc"
             />
           </div>
@@ -241,8 +241,8 @@
               id="instagramURL"
               name="instagramURL"
               class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-              placeholder="e.g., https://instagram.com/vhcc"
-              value="https://instagram.com/vhcc"
+              placeholder="https://www.instagram.com/virginiahighlands_cc"
+              value="https://www.instagram.com/virginiahighlands_cc"
             />
           </div>
           <div class="space-y-1">
@@ -256,8 +256,8 @@
               id="linkedInURL"
               name="linkedInURL"
               class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-              placeholder="e.g., https://linkedin.com/company/vhcc"
-              value="https://linkedin.com/company/vhcc"
+              placeholder="https://www.linkedin.com/school/virginia-highlands-community-college/"
+              value="https://www.linkedin.com/school/virginia-highlands-community-college/"
             />
           </div>
           <div class="space-y-1">
@@ -271,8 +271,8 @@
               id="youTubeURL"
               name="youTubeURL"
               class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-              placeholder="e.g., https://youtube.com/vhcc"
-              value="https://youtube.com/vhcc"
+              placeholder="https://www.youtube.com/user/VHCCAbingdon"
+              value="https://www.youtube.com/user/VHCCAbingdon"
             />
           </div>
 
@@ -288,7 +288,9 @@
       </div>
 
       <!-- Preview and Copy Section -->
-      <div class="w-full lg:w-1/2 flex flex-col items-center">
+      <div
+        class="w-full lg:w-1/2 flex flex-col items-center lg:sticky lg:top-6 lg:self-start"
+      >
         <h2
           class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white self-start"
         >
@@ -400,18 +402,24 @@
         const instagramURL = document.getElementById("instagramURL").value;
 
         const signatureHtml = `
-          <p style="background-color: #FFFFFF; border: none;">
-                <strong style="border: none;">${name}</strong><br />
-                ${title}<br />
-                ${unit ? `${unit}` : ""}<br />
-                <strong style="border: none;">Virginia Highlands Community College</strong><br /><br />
-                ${address1 ? `${address1}` : "100 VHCC Drive"}<br />
-                ${address2 ? `${address2}` : "Abingdon, VA 24210"}<br /><br />
-                <strong style="border: none;">phone:</strong> ${
-                  phone ? `${phone}` : ""
+          <p style="background-color: #FFFFFF; border: none; color: #000000;">
+                <strong style="border: none; color: #000000;">${name}</strong><br />
+                <span style="color: #000000;">${title}</span><br />
+                ${
+                  unit ? `<span style="color: #000000;">${unit}</span>` : ""
                 }<br />
-                <strong style="border: none;">email:</strong> <a href="mailto:${email}" style="color: #4578ba !important;text-decoration: underline;border: none;">${email}</a><br />
-                <strong style="border: none;">web:</strong> ${
+                <strong style="border: none; color: #000000;">Virginia Highlands Community College</strong><br /><br />
+                <span style="color: #000000;">${
+                  address1 ? `${address1}` : "100 VHCC Drive"
+                }</span><br />
+                <span style="color: #000000;">${
+                  address2 ? `${address2}` : "Abingdon, VA 24210"
+                }</span><br /><br />
+                <strong style="border: none; color: #000000;">phone:</strong> <span style="color: #000000;">${
+                  phone ? `${phone}` : ""
+                }</span><br />
+                <strong style="border: none; color: #000000;">email:</strong> <a href="mailto:${email}" style="color: #4578ba !important;text-decoration: underline;border: none;">${email}</a><br />
+                <strong style="border: none; color: #000000;">web:</strong> ${
                   website
                     ? `<a href="${website}" style="color: #4578ba !important;text-decoration: underline; border: none;">${website.replace(
                         /^(https?:\/\/)/,
@@ -445,7 +453,7 @@
                     : `<a href="https://www.linkedin.com/school/virginia-highlands-community-college/"  style="color: #4578ba !important;text-decoration: underline; border: none;">LinkedIn</a>`
                 }
                 <br /><br />
-                <span class="bg-[#4578ba] text-white bold"><strong>You're gonna love where you go.</strong></span>
+                <span style="background-color: #4578ba; color: #ffffff; font-weight: bold; padding: 2px 4px;"><strong>You're gonna love where you go.™</strong></span>
               </p>
             `;
 
