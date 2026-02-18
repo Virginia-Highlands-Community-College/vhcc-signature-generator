@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,6 +16,61 @@
         font-family: "Inter", sans-serif;
         background-color: #f3f4f6;
         color: #1f2937;
+      }
+      .help-icon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        margin-left: 6px;
+        cursor: help;
+      }
+      .help-icon .tooltip {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        bottom: 125%;
+        transform: translateX(-50%);
+        background-color: #1f2937;
+        color: #fff;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        line-height: 1.5;
+        width: 320px;
+        max-width: 90vw;
+        z-index: 1000;
+        transition:
+          opacity 0.2s,
+          visibility 0.2s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        font-weight: normal;
+      }
+      .help-icon .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #1f2937 transparent transparent transparent;
+      }
+      .help-icon:hover .tooltip,
+      .help-icon:focus .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+      .dark .help-icon .tooltip {
+        background-color: #374151;
+        border-color: #4b5563;
+      }
+      .dark .help-icon .tooltip::after {
+        border-color: #374151 transparent transparent transparent;
       }
     </style>
   </head>
@@ -202,6 +257,48 @@
           </div>
           <div class="space-y-1">
             <label
+              for="bookingsUrl"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >Microsoft Bookings URL
+              <span class="help-icon" tabindex="0">
+                <svg
+                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="tooltip">
+                  <strong>Where to find your Bookings URL:</strong><br />
+                  1. Go to
+                  <a
+                    href="https://outlook.office.com/bookings"
+                    target="_blank"
+                    class="underline"
+                    style="color: #60a5fa"
+                    >outlook.office.com/bookings</a
+                  ><br />
+                  2. Select your booking page<br />
+                  3. Click "Share" or "Booking page"<br />
+                  4. Copy the public booking page URL
+                </span>
+              </span>
+            </label>
+            <input
+              type="url"
+              id="bookingsUrl"
+              name="bookingsUrl"
+              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              placeholder="https://outlook.office.com/bookings/..."
+            />
+          </div>
+          <div class="space-y-1">
+            <label
               for="facebookUrl"
               class="block text-sm font-medium text-gray-700 dark:text-gray-300"
               >Facebook URL</label
@@ -318,6 +415,107 @@
         >
           Signature copied to clipboard!
         </div>
+
+        <!-- Help Section -->
+        <div class="w-full mt-6">
+          <button
+            id="help-toggle"
+            class="w-full flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+              How to add signature to Outlook
+            </span>
+            <svg
+              id="help-chevron"
+              class="w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="help-content"
+            class="overflow-hidden transition-all duration-300 max-h-0"
+          >
+            <div
+              class="p-4 bg-gray-50 dark:bg-gray-700 rounded-b-lg mt-1 text-sm text-gray-700 dark:text-gray-300"
+            >
+              <div class="space-y-4">
+                <!-- Outlook Desktop Instructions -->
+                <div>
+                  <h3 class="font-semibold text-gray-800 dark:text-white mb-2">
+                    Outlook Desktop (Windows/Mac)
+                  </h3>
+                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                    <li>Copy your signature using the button above</li>
+                    <li>
+                      Open Outlook and go to <strong>File</strong> →
+                      <strong>Options</strong> → <strong>Mail</strong>
+                    </li>
+                    <li>Click <strong>Signatures...</strong></li>
+                    <li>
+                      Click <strong>New</strong> to create a new signature
+                    </li>
+                    <li>Give it a name (e.g., "VHCC Signature")</li>
+                    <li>
+                      Click in the signature editor and press
+                      <strong>Ctrl+V</strong> (or <strong>Cmd+V</strong> on Mac)
+                      to paste
+                    </li>
+                    <li>
+                      Set as default for new messages and replies/forwards
+                    </li>
+                    <li>Click <strong>OK</strong> to save</li>
+                  </ol>
+                </div>
+                <!-- Outlook Web Instructions -->
+                <div>
+                  <h3 class="font-semibold text-gray-800 dark:text-white mb-2">
+                    Outlook on the Web
+                  </h3>
+                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                    <li>Copy your signature using the button above</li>
+                    <li>
+                      Go to
+                      <a
+                        href="https://outlook.office.com"
+                        target="_blank"
+                        class="text-indigo-600 dark:text-indigo-400 underline"
+                        >outlook.office.com</a
+                      >
+                    </li>
+                    <li>
+                      Click the <strong>⚙️ Settings</strong> gear icon (top
+                      right)
+                    </li>
+                    <li>
+                      Search for "signature" or go to <strong>Mail</strong> →
+                      <strong>Compose and reply</strong>
+                    </li>
+                    <li>
+                      Under <strong>Email signature</strong>, click in the text
+                      box
+                    </li>
+                    <li>
+                      Press <strong>Ctrl+V</strong> (or
+                      <strong>Cmd+V</strong> on Mac) to paste
+                    </li>
+                    <li>Enable "Include signature" options as desired</li>
+                    <li>Click <strong>Save</strong></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -327,13 +525,31 @@
       const copyButton = document.getElementById("copy-button");
       const messageBox = document.getElementById("message-box");
 
+      // Help Section Toggle
+      const helpToggle = document.getElementById("help-toggle");
+      const helpContent = document.getElementById("help-content");
+      const helpChevron = document.getElementById("help-chevron");
+
+      helpToggle.addEventListener("click", function () {
+        const isOpen =
+          helpContent.style.maxHeight && helpContent.style.maxHeight !== "0px";
+
+        if (isOpen) {
+          helpContent.style.maxHeight = "0px";
+          helpChevron.style.transform = "rotate(0deg)";
+        } else {
+          helpContent.style.maxHeight = helpContent.scrollHeight + "px";
+          helpChevron.style.transform = "rotate(180deg)";
+        }
+      });
+
       // Theme Toggle Logic
       const themeToggleBtn = document.getElementById("theme-toggle");
       const themeToggleDarkIcon = document.getElementById(
-        "theme-toggle-dark-icon"
+        "theme-toggle-dark-icon",
       );
       const themeToggleLightIcon = document.getElementById(
-        "theme-toggle-light-icon"
+        "theme-toggle-light-icon",
       );
 
       // Change the icons inside the button based on previous settings
@@ -395,6 +611,7 @@
         const phone = document.getElementById("phone").value;
         const email = document.getElementById("email").value;
         const website = document.getElementById("website").value;
+        const bookingsUrl = document.getElementById("bookingsUrl").value;
         const facebookUrl = document.getElementById("facebookUrl").value;
         const xURL = document.getElementById("xURL").value;
         const linkedInURL = document.getElementById("linkedInURL").value;
@@ -423,9 +640,13 @@
                   website
                     ? `<a href="${website}" style="color: #4578ba !important;text-decoration: underline; border: none;">${website.replace(
                         /^(https?:\/\/)/,
-                        ""
+                        "",
                       )}</a>`
                     : `<a href="https://www.vhcc.edu" style="color: #4578ba !important;text-decoration: underline; border: none;">www.vhcc.edu</a>`
+                }${
+                  bookingsUrl
+                    ? `<br /><strong style="border: none; color: #000000;">book a meeting:</strong> <a href="${bookingsUrl}" style="color: #4578ba !important;text-decoration: underline; border: none;">Schedule with me</a>`
+                    : ""
                 }<br/><br />
                 ${
                   facebookUrl
