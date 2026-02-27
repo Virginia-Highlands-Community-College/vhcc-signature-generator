@@ -615,7 +615,7 @@
                 <strong style="border: none; color: #000000;">${name}</strong><br />
                 <span style="color: #000000;">${title}${unit ? ` | ${unit}` : ""}</span><br />
                 ${unit ? "<br />" : ""}
-                <strong style="border: none; color: #000000;">Virginia Highlands Community College</strong><br />
+                <span style="border: none; color: #000000;">Virginia Highlands Community College</span><br />
                 <span style="color: #000000;">${
                   officeLocation ? `${officeLocation} | ` : ""
                 }${address1 ? `${address1}` : "100 VHCC Drive"}, ${
@@ -624,36 +624,35 @@
                 <strong style="border: none; color: #000000;">phone:</strong> <span style="color: #000000;">${
                   phone ? `${phone}` : ""
                 }</span><br />
-                <strong style="border: none; color: #000000;">email:</strong> <a href="mailto:${email}" style="color: #4578ba !important;text-decoration: underline;border: none;">${email}</a><br />
+                <strong style="border: none; color: #000000;">email:</strong> <a href="mailto:${email}" style="color: #3E79BB !important;text-decoration: underline;border: none;">${email}</a><br />
                 <strong style="border: none; color: #000000;">web:</strong> ${
                   website
-                    ? `<a href="${website}" style="color: #4578ba !important;text-decoration: underline; border: none;">${website.replace(
+                    ? `<a href="${website}" style="color: #3E79BB !important;text-decoration: underline; border: none;">${website.replace(
                         /^(https?:\/\/)/,
                         "",
                       )}</a>`
-                    : `<a href="https://www.vhcc.edu" style="color: #4578ba !important;text-decoration: underline; border: none;">www.vhcc.edu</a>`
+                    : `<a href="https://www.vhcc.edu" style="color: #3E79BB !important;text-decoration: underline; border: none;">www.vhcc.edu</a>`
                 }${
                   bookingsUrl
-                    ? `<br /><strong style="border: none; color: #000000;">book a meeting:</strong> <a href="${bookingsUrl}" style="color: #4578ba !important;text-decoration: underline; border: none;">Schedule with me</a>`
+                    ? `<br /><strong style="border: none; color: #000000;">book a meeting:</strong> <a href="${bookingsUrl}" style="color: #3E79BB !important;text-decoration: underline; border: none;">Schedule with me</a>`
                     : ""
-                }<br/><br />
+                }<br/>
+                <img src="https://vhcc-email-sig.netlify.app/assets/logo.png" alt="Virginia Highlands Community College" style="width: 250px; max-width: 100%; height: auto; display: block; border: none; margin-bottom: 12px;" /><br />
                 ${
                   facebookUrl
-                    ? `<a href="${facebookUrl}" style="color: #4578ba !important;text-decoration: underline; border: none;">Facebook</a>`
-                    : `<a href="https://www.facebook.com/VirginiaHighlands"  style="color: #4578ba !important;text-decoration: underline; border: none;">Facebook</a>`
+                    ? `<a href="${facebookUrl}" style="color: #3E79BB !important;text-decoration: underline; border: none;">Facebook</a>`
+                    : `<a href="https://www.facebook.com/VirginiaHighlands"  style="color: #3E79BB !important;text-decoration: underline; border: none;">Facebook</a>`
                 } 
                 ${
                   instagramURL
-                    ? `<a href="${instagramURL}"  style="color: #4578ba !important;text-decoration: underline; border: none;">Instagram</a>`
-                    : `<a href="https://www.instagram.com/virginiahighlands_cc"  style="color: #4578ba !important;text-decoration: underline; border: none;">Instagram</a>`
+                    ? `<a href="${instagramURL}"  style="color: #3E79BB !important;text-decoration: underline; border: none;">Instagram</a>`
+                    : `<a href="https://www.instagram.com/virginiahighlands_cc"  style="color: #3E79BB !important;text-decoration: underline; border: none;">Instagram</a>`
                 } 
                 ${
                   linkedInURL
-                    ? `<a href="${linkedInURL}"  style="color: #4578ba !important;text-decoration: underline; border: none;">LinkedIn</a>`
-                    : `<a href="https://www.linkedin.com/school/virginia-highlands-community-college/"  style="color: #4578ba !important;text-decoration: underline; border: none;">LinkedIn</a>`
+                    ? `<a href="${linkedInURL}"  style="color: #3E79BB !important;text-decoration: underline; border: none;">LinkedIn</a>`
+                    : `<a href="https://www.linkedin.com/school/virginia-highlands-community-college/"  style="color: #3E79BB !important;text-decoration: underline; border: none;">LinkedIn</a>`
                 }
-                <br /><br />
-                <img src="https://vhcc-email-sig.netlify.app/assets/logo.png" alt="Virginia Highlands Community College" style="width: 250px; max-width: 100%; height: auto; display: block; border: none;" />
               </p>
             `;
 
