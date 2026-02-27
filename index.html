@@ -612,14 +612,9 @@
 
         const signatureHtml = `
           <p style="background-color: #FFFFFF; border: none; color: #000000;">
-                <img src="https://vhcc-email-sig.netlify.app/assets/logo.png" alt="Virginia Highlands Community College" style="height: 60px; margin-bottom: 12px; border: none;" /><br />
                 <strong style="border: none; color: #000000;">${name}</strong><br />
-                <span style="color: #000000;">${title}</span><br />
-                ${
-                  unit
-                    ? `<span style="color: #000000;">${unit}</span><br /><br />`
-                    : ""
-                }
+                <span style="color: #000000;">${title}${unit ? ` | ${unit}` : ""}</span><br />
+                ${unit ? "<br />" : ""}
                 <strong style="border: none; color: #000000;">Virginia Highlands Community College</strong><br />
                 <span style="color: #000000;">${
                   officeLocation ? `${officeLocation} | ` : ""
@@ -658,7 +653,7 @@
                     : `<a href="https://www.linkedin.com/school/virginia-highlands-community-college/"  style="color: #4578ba !important;text-decoration: underline; border: none;">LinkedIn</a>`
                 }
                 <br /><br />
-                <span style="background-color: #4578ba; color: #ffffff; font-weight: bold; padding: 2px 4px;"><strong>You're gonna love where you go.™</strong></span>
+                <img src="https://vhcc-email-sig.netlify.app/assets/logo.png" alt="" style="width: 200px; max-width: 100%; height: auto; display: block; border: none;" />
               </p>
             `;
 
