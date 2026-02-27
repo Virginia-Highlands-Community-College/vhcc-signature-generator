@@ -185,6 +185,20 @@
           </div>
           <div class="space-y-1">
             <label
+              for="officeLocation"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >Office Location</label
+            >
+            <input
+              type="text"
+              id="officeLocation"
+              name="officeLocation"
+              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              placeholder="LRC 125"
+            />
+          </div>
+          <div class="space-y-1">
+            <label
               for="phone"
               class="block text-sm font-medium text-gray-700 dark:text-gray-300"
               >Phone</label
@@ -317,21 +331,6 @@
           </div>
           <div class="space-y-1">
             <label
-              for="xURL"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-              >X (Twitter) URL</label
-            >
-            <input
-              type="url"
-              id="xURL"
-              name="xURL"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-              placeholder="https://x.com/vhcc"
-              value="https://x.com/vhcc"
-            />
-          </div>
-          <div class="space-y-1">
-            <label
               for="instagramURL"
               class="block text-sm font-medium text-gray-700 dark:text-gray-300"
               >Instagram URL</label
@@ -358,21 +357,6 @@
               class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               placeholder="https://www.linkedin.com/school/virginia-highlands-community-college/"
               value="https://www.linkedin.com/school/virginia-highlands-community-college/"
-            />
-          </div>
-          <div class="space-y-1">
-            <label
-              for="youTubeURL"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-              >YouTube URL</label
-            >
-            <input
-              type="url"
-              id="youTubeURL"
-              name="youTubeURL"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-              placeholder="https://www.youtube.com/user/VHCCAbingdon"
-              value="https://www.youtube.com/user/VHCCAbingdon"
             />
           </div>
 
@@ -614,6 +598,7 @@
         const name = document.getElementById("name").value;
         const title = document.getElementById("title").value;
         const unit = document.getElementById("unit").value;
+        const officeLocation = document.getElementById("officeLocation").value;
         const address1 = document.getElementById("address1").value;
         const address2 = document.getElementById("address2").value;
 
@@ -622,23 +607,23 @@
         const website = document.getElementById("website").value;
         const bookingsUrl = document.getElementById("bookingsUrl").value;
         const facebookUrl = document.getElementById("facebookUrl").value;
-        const xURL = document.getElementById("xURL").value;
         const linkedInURL = document.getElementById("linkedInURL").value;
-        const youTubeURL = document.getElementById("youTubeURL").value;
         const instagramURL = document.getElementById("instagramURL").value;
 
         const signatureHtml = `
           <p style="background-color: #FFFFFF; border: none; color: #000000;">
+                <img src="https://vhcc-email-sig.netlify.app/assets/logo.png" alt="Virginia Highlands Community College" style="height: 60px; margin-bottom: 12px; border: none;" /><br />
                 <strong style="border: none; color: #000000;">${name}</strong><br />
                 <span style="color: #000000;">${title}</span><br />
                 ${
-                  unit ? `<span style="color: #000000;">${unit}</span>` : ""
-                }<br />
-                <strong style="border: none; color: #000000;">Virginia Highlands Community College</strong><br /><br />
+                  unit
+                    ? `<span style="color: #000000;">${unit}</span><br /><br />`
+                    : ""
+                }
+                <strong style="border: none; color: #000000;">Virginia Highlands Community College</strong><br />
                 <span style="color: #000000;">${
-                  address1 ? `${address1}` : "100 VHCC Drive"
-                }</span><br />
-                <span style="color: #000000;">${
+                  officeLocation ? `${officeLocation} | ` : ""
+                }${address1 ? `${address1}` : "100 VHCC Drive"}, ${
                   address2 ? `${address2}` : "Abingdon, VA 24210"
                 }</span><br /><br />
                 <strong style="border: none; color: #000000;">phone:</strong> <span style="color: #000000;">${
@@ -666,16 +651,6 @@
                   instagramURL
                     ? `<a href="${instagramURL}"  style="color: #4578ba !important;text-decoration: underline; border: none;">Instagram</a>`
                     : `<a href="https://www.instagram.com/virginiahighlands_cc"  style="color: #4578ba !important;text-decoration: underline; border: none;">Instagram</a>`
-                } 
-                ${
-                  xURL
-                    ? `<a href="${xURL}"  style="color: #4578ba !important;text-decoration: underline; border: none;">X</a>`
-                    : `<a href="https://x.com/vhcc"  style="color: #4578ba !important;text-decoration: underline; border: none;">X</a>`
-                } 
-                ${
-                  youTubeURL
-                    ? `<a href="${youTubeURL}"  style="color: #4578ba !important;text-decoration: underline; border: none;">YouTube</a>`
-                    : `<a href="https://www.youtube.com/user/VHCCAbingdon"  style="color: #4578ba !important;text-decoration: underline; border: none;">YouTube</a>`
                 } 
                 ${
                   linkedInURL
