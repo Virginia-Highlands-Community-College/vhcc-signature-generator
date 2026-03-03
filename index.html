@@ -616,11 +616,14 @@
                 <span style="color: #000000;">${title}${unit ? ` | ${unit}` : ""}</span><br />
                 ${unit ? "<br />" : ""}
                 <span style="border: none; color: #000000;">Virginia Highlands Community College</span><br />
-                <span style="color: #000000;">${
-                  officeLocation ? `${officeLocation} | ` : ""
-                }${address1 ? `${address1}` : "100 VHCC Drive"}, ${
+                <span style="color: #000000;">${address1 ? `${address1}` : "100 VHCC Drive"}, ${
                   address2 ? `${address2}` : "Abingdon, VA 24210"
                 }</span><br /><br />
+                ${
+                  officeLocation
+                    ? `<strong style="border: none; color: #000000;">office:</strong> <span style="color: #000000;">${officeLocation}</span><br />`
+                    : ""
+                }
                 <strong style="border: none; color: #000000;">phone:</strong> <span style="color: #000000;">${
                   phone ? `${phone}` : ""
                 }</span><br />
@@ -636,8 +639,7 @@
                   bookingsUrl
                     ? `<br /><strong style="border: none; color: #000000;">book a meeting:</strong> <a href="${bookingsUrl}" style="color: #3E79BB !important;text-decoration: underline; border: none;">Schedule with me</a>`
                     : ""
-                }<br/>
-                <img src="https://vhcc-email-sig.netlify.app/assets/logo.png" alt="Virginia Highlands Community College" style="width: 250px; max-width: 100%; height: auto; display: block; border: none; margin-bottom: 12px;" /><br />
+                }<br/><br/>
                 ${
                   facebookUrl
                     ? `<a href="${facebookUrl}" style="color: #3E79BB !important;text-decoration: underline; border: none;">Facebook</a>`
@@ -652,7 +654,8 @@
                   linkedInURL
                     ? `<a href="${linkedInURL}"  style="color: #3E79BB !important;text-decoration: underline; border: none;">LinkedIn</a>`
                     : `<a href="https://www.linkedin.com/school/virginia-highlands-community-college/"  style="color: #3E79BB !important;text-decoration: underline; border: none;">LinkedIn</a>`
-                }
+                }<br /><br />
+                <img src="https://vhcc-email-sig.netlify.app/assets/logo.png" alt="Virginia Highlands Community College" style="width: 250px; max-width: 100%; height: auto; display: block; border: none; margin-bottom: 12px;" />
               </p>
             `;
 
