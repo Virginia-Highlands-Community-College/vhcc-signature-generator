@@ -8,131 +8,22 @@
     <meta name="bingbot" content="noindex, nofollow, noarchive" />
     <title>VHCC Email Signature Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-      };
-    </script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #f3f4f6;
-        color: #1f2937;
-      }
-      .help-icon {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 16px;
-        height: 16px;
-        margin-left: 6px;
-        cursor: help;
-      }
-      .help-icon .tooltip {
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        left: 50%;
-        bottom: 125%;
-        transform: translateX(-50%);
-        background-color: #1f2937;
-        color: #fff;
-        padding: 12px;
-        border-radius: 6px;
-        font-size: 13px;
-        line-height: 1.5;
-        width: 320px;
-        max-width: 90vw;
-        z-index: 1000;
-        transition:
-          opacity 0.2s,
-          visibility 0.2s;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: left;
-        font-weight: normal;
-      }
-      .help-icon .tooltip::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #1f2937 transparent transparent transparent;
-      }
-      .help-icon:hover .tooltip,
-      .help-icon:focus .tooltip {
-        visibility: visible;
-        opacity: 1;
-      }
-      .dark .help-icon .tooltip {
-        background-color: #374151;
-        border-color: #4b5563;
-      }
-      .dark .help-icon .tooltip::after {
-        border-color: #374151 transparent transparent transparent;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body
-    class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-6 flex items-center justify-center min-h-screen transition-colors duration-300"
+    class="bg-gray-100 text-gray-900 p-6 flex items-center justify-center min-h-screen"
   >
     <div
-      class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 max-w-4xl w-full flex flex-col lg:flex-row gap-8 transition-colors duration-300"
+      class="bg-white rounded-xl shadow-2xl p-8 max-w-4xl w-full flex flex-col lg:flex-row gap-8"
     >
       <!-- Input Form Section -->
-      <div class="w-full lg:w-1/2 relative">
-        <button
-          id="theme-toggle"
-          class="absolute top-0 right-0 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          aria-label="Toggle Dark Mode"
-        >
-          <!-- Sun Icon -->
-          <svg
-            id="theme-toggle-light-icon"
-            class="w-5 h-5 hidden"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h1a1 1 0 100 2h-1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
-          <!-- Moon Icon -->
-          <svg
-            id="theme-toggle-dark-icon"
-            class="w-5 h-5 hidden"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-            ></path>
-          </svg>
-        </button>
+      <div class="w-full lg:w-1/2">
+        <img src="assets/VHCC-logo.png" alt="VHCC Logo" class="h-16 mb-6" />
 
-        <img
-          src="assets/VHCC-logo.png"
-          alt="VHCC Logo"
-          class="h-16 mb-6 block dark:hidden"
-        />
-        <img
-          src="assets/VHCC-logo-white.png"
-          alt="VHCC Logo"
-          class="h-16 mb-6 hidden dark:block"
-        />
-
-        <h1 class="text-3xl font-semibold mb-6 text-gray-800 dark:text-white">
+        <h1 class="text-3xl font-semibold mb-6 text-gray-800">
           Email Signature Generator
         </h1>
-        <p class="text-gray-600 dark:text-gray-300 mb-8">
+        <p class="text-gray-600 mb-8">
           Enter your information below to create your professional email
           signature. Once generated, you can copy the signature and paste it
           into your email client's settings.
@@ -140,89 +31,79 @@
 
         <form id="signature-form" class="space-y-4">
           <div class="space-y-1">
-            <label
-              for="name"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            <label for="name" class="block text-sm font-medium text-gray-700"
               >Name</label
             >
             <input
               type="text"
               id="name"
               name="name"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="Your Name"
               required
             />
           </div>
           <div class="space-y-1">
-            <label
-              for="title"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            <label for="title" class="block text-sm font-medium text-gray-700"
               >Title</label
             >
             <input
               type="text"
               id="title"
               name="title"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="Your Title"
               required
             />
           </div>
           <div class="space-y-1">
-            <label
-              for="unit"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            <label for="unit" class="block text-sm font-medium text-gray-700"
               >Unit/Department</label
             >
             <input
               type="text"
               id="unit"
               name="unit"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="Your Unit/Department"
             />
           </div>
           <div class="space-y-1">
             <label
               for="officeLocation"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              class="block text-sm font-medium text-gray-700"
               >Office Location</label
             >
             <input
               type="text"
               id="officeLocation"
               name="officeLocation"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="LRC 125"
             />
           </div>
           <div class="space-y-1">
-            <label
-              for="phone"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            <label for="phone" class="block text-sm font-medium text-gray-700"
               >Phone</label
             >
             <input
               type="tel"
               id="phone"
               name="phone"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="Phone Number"
               value="276-739-"
             />
           </div>
           <div class="space-y-1">
-            <label
-              for="email"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            <label for="email" class="block text-sm font-medium text-gray-700"
               >Email</label
             >
             <input
               type="email"
               id="email"
               name="email"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="Email Address"
               required
             />
@@ -230,14 +111,14 @@
           <div class="space-y-1">
             <label
               for="address1"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              class="block text-sm font-medium text-gray-700"
               >Address Line 1</label
             >
             <input
               type="text"
               id="address1"
               name="address1"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="100 VHCC Drive"
               value="100 VHCC Drive"
             />
@@ -245,29 +126,27 @@
           <div class="space-y-1">
             <label
               for="address2"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              class="block text-sm font-medium text-gray-700"
               >Address Line 2</label
             >
             <input
               type="text"
               id="address2"
               name="address2"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="Abingdon, VA 24210"
               value="Abingdon, VA 24210"
             />
           </div>
           <div class="space-y-1">
-            <label
-              for="website"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            <label for="website" class="block text-sm font-medium text-gray-700"
               >Website URL</label
             >
             <input
               type="url"
               id="website"
               name="website"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="e.g., https://www.vhcc.edu"
               value="https://www.vhcc.edu"
             />
@@ -275,11 +154,11 @@
           <div class="space-y-1">
             <label
               for="bookingsUrl"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              class="block text-sm font-medium text-gray-700"
               >Microsoft Bookings URL
               <span class="help-icon" tabindex="0">
                 <svg
-                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  class="w-4 h-4 text-gray-500"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -310,21 +189,21 @@
               type="url"
               id="bookingsUrl"
               name="bookingsUrl"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="https://outlook.office.com/bookings/..."
             />
           </div>
           <div class="space-y-1">
             <label
               for="facebookUrl"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              class="block text-sm font-medium text-gray-700"
               >Facebook URL</label
             >
             <input
               type="url"
               id="facebookUrl"
               name="facebookUrl"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="https://www.facebook.com/VirginiaHighlands"
               value="https://www.facebook.com/VirginiaHighlands"
             />
@@ -332,14 +211,14 @@
           <div class="space-y-1">
             <label
               for="instagramURL"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              class="block text-sm font-medium text-gray-700"
               >Instagram URL</label
             >
             <input
               type="url"
               id="instagramURL"
               name="instagramURL"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="https://www.instagram.com/virginiahighlands_cc"
               value="https://www.instagram.com/virginiahighlands_cc"
             />
@@ -347,14 +226,14 @@
           <div class="space-y-1">
             <label
               for="linkedInURL"
-              class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              class="block text-sm font-medium text-gray-700"
               >LinkedIn URL</label
             >
             <input
               type="url"
               id="linkedInURL"
               name="linkedInURL"
-              class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+              class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white text-gray-900"
               placeholder="https://www.linkedin.com/school/virginia-highlands-community-college/"
               value="https://www.linkedin.com/school/virginia-highlands-community-college/"
             />
@@ -375,9 +254,7 @@
       <div
         class="w-full lg:w-1/2 flex flex-col items-center lg:sticky lg:top-6 lg:self-start"
       >
-        <h2
-          class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white self-start"
-        >
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800 self-start">
           Signature Preview
         </h2>
         <div
@@ -407,14 +284,14 @@
         <div class="w-full mt-6">
           <button
             id="help-toggle"
-            class="w-full flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
-            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+            <span class="text-sm font-medium text-gray-700">
               How to add signature to Outlook
             </span>
             <svg
               id="help-chevron"
-              class="w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform duration-200"
+              class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -432,13 +309,11 @@
             id="help-content"
             class="overflow-hidden transition-all duration-300 max-h-0"
           >
-            <div
-              class="p-4 bg-gray-50 dark:bg-gray-700 rounded-b-lg mt-1 text-sm text-gray-700 dark:text-gray-300"
-            >
+            <div class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700">
               <div class="space-y-4">
                 <!-- Outlook Desktop Instructions -->
                 <div>
-                  <h3 class="font-semibold text-gray-800 dark:text-white mb-2">
+                  <h3 class="font-semibold text-gray-800 mb-2">
                     Outlook Desktop (Windows/Mac)
                   </h3>
                   <ol class="list-decimal list-inside space-y-1.5 ml-2">
@@ -465,7 +340,7 @@
                 </div>
                 <!-- Outlook Web Instructions -->
                 <div>
-                  <h3 class="font-semibold text-gray-800 dark:text-white mb-2">
+                  <h3 class="font-semibold text-gray-800 mb-2">
                     Outlook on the Web
                   </h3>
                   <ol class="list-decimal list-inside space-y-1.5 ml-2">
@@ -475,7 +350,7 @@
                       <a
                         href="https://outlook.office.com"
                         target="_blank"
-                        class="text-indigo-600 dark:text-indigo-400 underline"
+                        class="text-indigo-600 underline"
                         >outlook.office.com</a
                       >
                     </li>
@@ -512,196 +387,6 @@
       </div>
     </div>
 
-    <script>
-      const form = document.getElementById("signature-form");
-      const preview = document.getElementById("signature-preview");
-      const copyButton = document.getElementById("copy-button");
-      const messageBox = document.getElementById("message-box");
-
-      // Help Section Toggle
-      const helpToggle = document.getElementById("help-toggle");
-      const helpContent = document.getElementById("help-content");
-      const helpChevron = document.getElementById("help-chevron");
-
-      helpToggle.addEventListener("click", function () {
-        const isOpen =
-          helpContent.style.maxHeight && helpContent.style.maxHeight !== "0px";
-
-        if (isOpen) {
-          helpContent.style.maxHeight = "0px";
-          helpChevron.style.transform = "rotate(0deg)";
-        } else {
-          helpContent.style.maxHeight = helpContent.scrollHeight + "px";
-          helpChevron.style.transform = "rotate(180deg)";
-        }
-      });
-
-      // Theme Toggle Logic
-      const themeToggleBtn = document.getElementById("theme-toggle");
-      const themeToggleDarkIcon = document.getElementById(
-        "theme-toggle-dark-icon",
-      );
-      const themeToggleLightIcon = document.getElementById(
-        "theme-toggle-light-icon",
-      );
-
-      // Change the icons inside the button based on previous settings
-      if (
-        localStorage.getItem("color-theme") === "dark" ||
-        (!("color-theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        themeToggleLightIcon.classList.remove("hidden");
-        document.documentElement.classList.add("dark");
-      } else {
-        themeToggleDarkIcon.classList.remove("hidden");
-        document.documentElement.classList.remove("dark");
-      }
-
-      themeToggleBtn.addEventListener("click", function () {
-        // toggle icons inside button
-        themeToggleDarkIcon.classList.toggle("hidden");
-        themeToggleLightIcon.classList.toggle("hidden");
-
-        // if set via local storage previously
-        if (localStorage.getItem("color-theme")) {
-          if (localStorage.getItem("color-theme") === "light") {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("color-theme", "dark");
-          } else {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("color-theme", "light");
-          }
-
-          // if NOT set via local storage previously
-        } else {
-          if (document.documentElement.classList.contains("dark")) {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("color-theme", "light");
-          } else {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("color-theme", "dark");
-          }
-        }
-      });
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        generateSignature();
-      });
-
-      copyButton.addEventListener("click", function () {
-        copySignature();
-      });
-
-      function generateSignature() {
-        const name = document.getElementById("name").value;
-        const title = document.getElementById("title").value;
-        const unit = document.getElementById("unit").value;
-        const officeLocation = document.getElementById("officeLocation").value;
-        const address1 = document.getElementById("address1").value;
-        const address2 = document.getElementById("address2").value;
-
-        const phone = document.getElementById("phone").value;
-        const email = document.getElementById("email").value;
-        const website = document.getElementById("website").value;
-        const bookingsUrl = document.getElementById("bookingsUrl").value;
-        const facebookUrl = document.getElementById("facebookUrl").value;
-        const linkedInURL = document.getElementById("linkedInURL").value;
-        const instagramURL = document.getElementById("instagramURL").value;
-
-        const signatureHtml = `
-          <p style="background-color: #FFFFFF; border: none; color: #000000;">
-                <strong style="border: none; color: #000000;">${name}</strong><br />
-                <span style="color: #000000;">${title}${unit ? ` | ${unit}` : ""}</span><br />
-                ${unit ? "<br />" : ""}
-                <span style="border: none; color: #000000;">Virginia Highlands Community College</span><br />
-                <span style="color: #000000;">${address1 ? `${address1}` : "100 VHCC Drive"}, ${
-                  address2 ? `${address2}` : "Abingdon, VA 24210"
-                }</span><br /><br />
-                ${
-                  officeLocation
-                    ? `<strong style="border: none; color: #000000;">office:</strong> <span style="color: #000000;">${officeLocation}</span><br />`
-                    : ""
-                }
-                <strong style="border: none; color: #000000;">phone:</strong> <span style="color: #000000;">${
-                  phone ? `${phone}` : ""
-                }</span><br />
-                <strong style="border: none; color: #000000;">email:</strong> <a href="mailto:${email}" style="color: #3E79BB !important;text-decoration: underline;border: none;">${email}</a><br />
-                <strong style="border: none; color: #000000;">web:</strong> ${
-                  website
-                    ? `<a href="${website}" style="color: #3E79BB !important;text-decoration: underline; border: none;">${website.replace(
-                        /^(https?:\/\/)/,
-                        "",
-                      )}</a>`
-                    : `<a href="https://www.vhcc.edu" style="color: #3E79BB !important;text-decoration: underline; border: none;">www.vhcc.edu</a>`
-                }${
-                  bookingsUrl
-                    ? `<br /><strong style="border: none; color: #000000;">book a meeting:</strong> <a href="${bookingsUrl}" style="color: #3E79BB !important;text-decoration: underline; border: none;">Schedule with me</a>`
-                    : ""
-                }<br/><br/>
-                ${
-                  facebookUrl
-                    ? `<a href="${facebookUrl}" style="color: #3E79BB !important;text-decoration: underline; border: none;">Facebook</a>`
-                    : `<a href="https://www.facebook.com/VirginiaHighlands"  style="color: #3E79BB !important;text-decoration: underline; border: none;">Facebook</a>`
-                } 
-                ${
-                  instagramURL
-                    ? `<a href="${instagramURL}"  style="color: #3E79BB !important;text-decoration: underline; border: none;">Instagram</a>`
-                    : `<a href="https://www.instagram.com/virginiahighlands_cc"  style="color: #3E79BB !important;text-decoration: underline; border: none;">Instagram</a>`
-                } 
-                ${
-                  linkedInURL
-                    ? `<a href="${linkedInURL}"  style="color: #3E79BB !important;text-decoration: underline; border: none;">LinkedIn</a>`
-                    : `<a href="https://www.linkedin.com/school/virginia-highlands-community-college/"  style="color: #3E79BB !important;text-decoration: underline; border: none;">LinkedIn</a>`
-                }<br /><br />
-                <img src="https://vhcc-email-sig.netlify.app/assets/logo.png" alt="Virginia Highlands Community College" style="width: 250px; max-width: 100%; height: auto; display: block; border: none; margin-bottom: 12px;" />
-              </p>
-            `;
-
-        preview.innerHTML = signatureHtml;
-        copyButton.style.display = "block";
-      }
-
-      function copySignature() {
-        // We create a temporary element to hold the HTML to be copied
-        const tempDiv = document.createElement("div");
-        tempDiv.innerHTML = preview.innerHTML;
-        document.body.appendChild(tempDiv);
-
-        // Select the content
-        const range = document.createRange();
-        range.selectNode(tempDiv);
-        window.getSelection().removeAllRanges();
-        window.getSelection().addRange(range);
-
-        // Execute the copy command
-        let success = false;
-        try {
-          success = document.execCommand("copy");
-        } catch (err) {
-          console.error("Failed to copy", err);
-        }
-
-        // Clean up the temporary element
-        window.getSelection().removeAllRanges();
-        document.body.removeChild(tempDiv);
-
-        if (success) {
-          showMessageBox();
-        } else {
-          console.error("Failed to copy signature.");
-        }
-      }
-
-      function showMessageBox() {
-        messageBox.style.opacity = "1";
-        messageBox.style.transform = "scale(1)";
-        setTimeout(() => {
-          messageBox.style.opacity = "0";
-          messageBox.style.transform = "scale(0.95)";
-        }, 3000);
-      }
-    </script>
+    <script src="assets/app.js"></script>
   </body>
 </html>
