@@ -130,9 +130,6 @@ const SignatureGenerator = {
       ? website.replace(/^https?:\/\//, "")
       : "www.vhcc.edu";
 
-    // Build optional lines
-    const unitSuffix = unit ? ` | ${unit}` : "";
-
     const officeLine = officeLocation
       ? `<strong style="${font} ${s.bold}">office:</strong> <span style="${font}">${officeLocation}</span><br>`
       : "";
@@ -141,13 +138,15 @@ const SignatureGenerator = {
       ? `<strong style="${font} ${s.bold}">book a meeting:</strong> ${this.makeLink(bookingsUrl, "Schedule with me")}<br>`
       : "";
 
+    const unitLine = unit ? `<span style="${font}">${unit}</span><br>` : "";
+
     // Using <br>-separated spans instead of a table.
     // Tables in email signatures cause Outlook Web to inject
     // a contrasting background wrapper in both light and dark mode.
     return `<div style="${font}">
 <span style="${font} ${s.name}">${name}</span><br>
-<span style="${font}">${title}${unitSuffix}</span><br>
-${unit ? "<br>" : ""}<span style="${font}">Virginia Highlands Community College</span><br>
+<span style="${font} ${s.bold}">${title}</span><br>
+${unitLine}<br><span style="${font}">Virginia Highlands Community College</span><br>
 <span style="${font}">${address1 || "100 VHCC Drive"}, ${address2 || "Abingdon, VA 24210"}</span><br>
 <br>
 ${officeLine}<strong style="${font} ${s.bold}">phone:</strong> <span style="${font}">${phone || ""}</span><br>
