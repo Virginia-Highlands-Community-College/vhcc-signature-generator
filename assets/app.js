@@ -80,7 +80,7 @@ const SignatureGenerator = {
   STYLES: {
     font: "font-family: Calibri, Arial, Helvetica, sans-serif; font-size: 14px;",
     bold: "font-weight: bold;",
-    name: "font-weight: bold; font-size: 16px;",
+    name: "font-weight: bold; font-size: 18px;",
     link: "color: #3E79BB; text-decoration: underline;",
   },
 
@@ -147,7 +147,7 @@ const SignatureGenerator = {
 <span style="${font} ${s.name}">${name}</span><br>
 <span style="${font} ${s.bold}">${title}</span><br>
 ${unitLine}<br><span style="${font}">Virginia Highlands Community College</span><br>
-<span style="${font}">${address1 || "100 VHCC Drive"}, ${address2 || "Abingdon, VA 24210"}</span><br>
+<span style="${font}">${address1 || "P.O. Box 828, Abingdon, VA 24212"}<br>${address2 || "100 VHCC Drive, Abingdon, VA 24210"}</span><br>
 <br>
 ${officeLine}<strong style="${font} ${s.bold}">phone:</strong> <span style="${font}">${phone || ""}</span><br>
 <strong style="${font} ${s.bold}">email:</strong> ${this.makeLink("mailto:" + email, email)}<br>
