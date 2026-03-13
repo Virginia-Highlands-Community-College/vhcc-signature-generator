@@ -1,4 +1,4 @@
-# VHCC Email Signature Generator
+# VHCC Email Signature Generator :)
 
 A web application for generating professional email signatures for Virginia Highlands Community College staff.
 
