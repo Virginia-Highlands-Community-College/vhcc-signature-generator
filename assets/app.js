@@ -9,7 +9,9 @@
 const AccordionManager = {
   init() {
     // Query all accordion buttons dynamically
-    const accordionButtons = document.querySelectorAll("[data-accordion-toggle]");
+    const accordionButtons = document.querySelectorAll(
+      "[data-accordion-toggle]",
+    );
     accordionButtons.forEach((button) => {
       button.addEventListener("click", () => this.toggleAccordion(button));
     });
@@ -22,8 +24,7 @@ const AccordionManager = {
 
     if (!content) return;
 
-    const isOpen =
-      content.style.maxHeight && content.style.maxHeight !== "0px";
+    const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
 
     if (isOpen) {
       content.style.maxHeight = "0px";
@@ -80,7 +81,7 @@ const SignatureGenerator = {
   STYLES: {
     font: "font-family: Arial, Helvetica, sans-serif; font-size: 11pt; line-height: 14pt; mso-line-height-rule: exactly;",
     bold: "font-weight: bold;",
-    name: "font-weight: bold; font-size: 11pt;",
+    name: "font-size: 11pt;",
     link: "color: #3E79BB; text-decoration: underline;",
   },
 
