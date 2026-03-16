@@ -147,9 +147,9 @@ const SignatureGenerator = {
 ${unitLine}<span style="${font}">Virginia Highlands Community College</span><br>
   <span style="${font}">${address1 || "P.O. Box 828, Abingdon, VA 24212"}</span><br>
 <br>
-${officeLine}<strong style="${font} ${s.bold}">phone:</strong> <span style="${font}">${phone || ""}</span><br>
-<strong style="${font} ${s.bold}">email:</strong> ${this.makeLink("mailto:" + email, email)}<br>
-<strong style="${font} ${s.bold}">web:</strong> ${this.makeLink(webUrl, webDisplay)}<br>
+${officeLine}<strong style="${font}">phone:</strong> <span style="${font}">${phone || ""}</span><br>
+<strong style="${font}">email:</strong> ${this.makeLink("mailto:" + email, email)}<br>
+<strong style="${font}">web:</strong> ${this.makeLink(webUrl, webDisplay)}<br>
 ${bookingsLine}<br>
 ${this.makeSocialLink(facebookUrl, "https://www.facebook.com/VirginiaHighlands", "Facebook")}
 &nbsp;
