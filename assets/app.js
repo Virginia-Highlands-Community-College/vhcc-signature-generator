@@ -4,32 +4,33 @@
  */
 
 // ============================================================================
-// HELP SECTION MANAGEMENT
+// ACCORDION MANAGEMENT (Multiple accordions)
 // ============================================================================
-const HelpManager = {
+const AccordionManager = {
   init() {
-    this.helpToggle = document.getElementById("help-toggle");
-    this.helpContent = document.getElementById("help-content");
-    this.helpChevron = document.getElementById("help-chevron");
-
-    this.attachEventListeners();
+    // Query all accordion buttons dynamically
+    const accordionButtons = document.querySelectorAll("[data-accordion-toggle]");
+    accordionButtons.forEach((button) => {
+      button.addEventListener("click", () => this.toggleAccordion(button));
+    });
   },
 
-  attachEventListeners() {
-    this.helpToggle.addEventListener("click", () => this.toggleHelp());
-  },
+  toggleAccordion(button) {
+    const contentId = button.getAttribute("data-accordion-toggle");
+    const content = document.getElementById(contentId);
+    const chevron = button.querySelector("svg");
 
-  toggleHelp() {
+    if (!content) return;
+
     const isOpen =
-      this.helpContent.style.maxHeight &&
-      this.helpContent.style.maxHeight !== "0px";
+      content.style.maxHeight && content.style.maxHeight !== "0px";
 
     if (isOpen) {
-      this.helpContent.style.maxHeight = "0px";
-      this.helpChevron.style.transform = "rotate(0deg)";
+      content.style.maxHeight = "0px";
+      if (chevron) chevron.style.transform = "rotate(0deg)";
     } else {
-      this.helpContent.style.maxHeight = this.helpContent.scrollHeight + "px";
-      this.helpChevron.style.transform = "rotate(180deg)";
+      content.style.maxHeight = content.scrollHeight + "px";
+      if (chevron) chevron.style.transform = "rotate(180deg)";
     }
   },
 };
@@ -201,6 +202,6 @@ ${this.makeSocialLink(linkedInURL, "https://www.linkedin.com/school/virginia-hig
 // APPLICATION INITIALIZATION
 // ============================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  HelpManager.init();
+  AccordionManager.init();
   SignatureGenerator.init();
 });

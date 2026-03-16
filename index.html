@@ -275,6 +275,7 @@
         <div class="w-full mt-6">
           <button
             id="help-toggle"
+            data-accordion-toggle="help-content"
             class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <span class="text-sm font-medium text-gray-700">
@@ -369,6 +370,110 @@
                       the generator.
                     </li>
                     <li>Click <strong>Save</strong></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Font and Font Size Settings Accordion -->
+          <button
+            id="font-toggle"
+            data-accordion-toggle="font-content"
+            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-4"
+          >
+            <span class="text-sm font-medium text-gray-700">
+              Font settings for your email client
+            </span>
+            <svg
+              id="font-chevron"
+              class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="font-content"
+            class="overflow-hidden transition-all duration-300 max-h-0"
+          >
+            <div class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700">
+              <div class="space-y-4">
+                <p class="text-gray-600">
+                  To ensure your email displays correctly with the
+                  <strong>Arial 11pt</strong> font of the signature, adjust your
+                  email client settings:
+                </p>
+
+                <!-- Outlook Web Settings -->
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-2">
+                    Outlook on the Web
+                  </h3>
+                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                    <li>Go to <strong>Settings</strong> (gear icon)</li>
+                    <li>
+                      Select <strong>Mail</strong> →
+                      <strong>Compose and reply</strong>
+                    </li>
+                    <li>
+                      Under <strong>Compose messages</strong>, look for font
+                      settings
+                    </li>
+                    <li>Set the default font to <strong>Arial</strong></li>
+                    <li>Set the font size to <strong>11pt</strong></li>
+                    <li>Click <strong>Save</strong></li>
+                  </ol>
+                </div>
+
+                <!-- Outlook Desktop Settings -->
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-2">
+                    Outlook Desktop (Windows)
+                  </h3>
+                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                    <li>
+                      Open Outlook and go to <strong>File</strong> →
+                      <strong>Options</strong>
+                    </li>
+                    <li>Click <strong>Mail</strong> on the left sidebar</li>
+                    <li>Click <strong>Stationery and Fonts</strong></li>
+                    <li>
+                      Under <strong>Compose messages</strong>, click
+                      <strong>Fonts</strong>
+                    </li>
+                    <li>
+                      Set font to <strong>Arial</strong> and size to
+                      <strong>11 pt</strong>
+                    </li>
+                    <li>Click <strong>OK</strong> to apply</li>
+                  </ol>
+                </div>
+
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-2">
+                    Outlook Desktop (Mac)
+                  </h3>
+                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                    <li>
+                      Open Outlook and go to
+                      <strong>Outlook</strong> → <strong>Settings</strong>
+                    </li>
+                    <li>Click <strong>Fonts</strong></li>
+                    <li>
+                      Set font to <strong>Arial</strong> and size to
+                      <strong>11 pt</strong> for both New mail, Reply/forward,
+                      and Preview.
+                    </li>
+                    <li>Click <strong>OK</strong> to apply</li>
                   </ol>
                 </div>
               </div>
