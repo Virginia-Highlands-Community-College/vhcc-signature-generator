@@ -4,6 +4,31 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #f3f4f6;
   color: #1f2937;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Keep effects on the backdrop only so foreground UI remains sharp. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url(/assets/bg2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  transform: scale(1.03);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.45);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .help-icon {

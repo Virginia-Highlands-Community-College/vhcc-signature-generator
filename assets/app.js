@@ -63,7 +63,6 @@ const SignatureGenerator = {
       unit: document.getElementById("unit").value,
       officeLocation: document.getElementById("officeLocation").value,
       address1: document.getElementById("address1").value,
-      address2: document.getElementById("address2").value,
       phone: document.getElementById("phone").value,
       email: document.getElementById("email").value,
       website: document.getElementById("website").value,
@@ -78,9 +77,9 @@ const SignatureGenerator = {
   // Over-declaring (especially border resets) triggers Outlook Web's
   // dark-mode engine to wrap the signature in a contrasting background.
   STYLES: {
-    font: "font-family: Calibri, Arial, Helvetica, sans-serif; font-size: 14px;",
+    font: "font-family: Arial, Helvetica, sans-serif; font-size: 11pt; line-height: 14pt; mso-line-height-rule: exactly;",
     bold: "font-weight: bold;",
-    name: "font-weight: bold; font-size: 18px;",
+    name: "font-weight: bold; font-size: 11pt;",
     link: "color: #3E79BB; text-decoration: underline;",
   },
 
@@ -112,7 +111,6 @@ const SignatureGenerator = {
       unit,
       officeLocation,
       address1,
-      address2,
       phone,
       email,
       website,
@@ -145,9 +143,9 @@ const SignatureGenerator = {
     // a contrasting background wrapper in both light and dark mode.
     return `<div style="${font}">
 <span style="${font} ${s.name}">${name}</span><br>
-<span style="${font} ${s.bold}">${title}</span><br>
-${unitLine}<br><span style="${font}">Virginia Highlands Community College</span><br>
-<span style="${font}">${address1 || "P.O. Box 828, Abingdon, VA 24212"}<br>${address2 || "100 VHCC Drive, Abingdon, VA 24210"}</span><br>
+<span style="${font}">${title}</span><br>
+${unitLine}<span style="${font}">Virginia Highlands Community College</span><br>
+  <span style="${font}">${address1 || "P.O. Box 828, Abingdon, VA 24212"}</span><br>
 <br>
 ${officeLine}<strong style="${font} ${s.bold}">phone:</strong> <span style="${font}">${phone || ""}</span><br>
 <strong style="${font} ${s.bold}">email:</strong> ${this.makeLink("mailto:" + email, email)}<br>
