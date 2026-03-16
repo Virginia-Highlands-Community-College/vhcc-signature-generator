@@ -129,11 +129,11 @@ const SignatureGenerator = {
       : "www.vhcc.edu";
 
     const officeLine = officeLocation
-      ? `<strong style="${font} ${s.bold}">office:</strong> <span style="${font}">${officeLocation}</span><br>`
+      ? `<span style="${font}">office:</span> <span style="${font}">${officeLocation}</span><br>`
       : "";
 
     const bookingsLine = bookingsUrl
-      ? `<strong style="${font} ${s.bold}">book a meeting:</strong> ${this.makeLink(bookingsUrl, "Schedule with me")}<br>`
+      ? `<span style="${font}">book a meeting:</span> ${this.makeLink(bookingsUrl, "Schedule with me")}<br>`
       : "";
 
     const unitLine = unit ? `<span style="${font}">${unit}</span><br>` : "";
@@ -147,9 +147,9 @@ const SignatureGenerator = {
 ${unitLine}<span style="${font}">Virginia Highlands Community College</span><br>
   <span style="${font}">${address1 || "P.O. Box 828, Abingdon, VA 24212"}</span><br>
 <br>
-${officeLine}<strong style="${font}">phone:</strong> <span style="${font}">${phone || ""}</span><br>
-<strong style="${font}">email:</strong> ${this.makeLink("mailto:" + email, email)}<br>
-<strong style="${font}">web:</strong> ${this.makeLink(webUrl, webDisplay)}<br>
+${officeLine}<span style="${font}">phone:</span> <span style="${font}">${phone || ""}</span><br>
+<span style="${font}">email:</span> ${this.makeLink("mailto:" + email, email)}<br>
+<span style="${font}">web:</span> ${this.makeLink(webUrl, webDisplay)}<br>
 ${bookingsLine}<br>
 ${this.makeSocialLink(facebookUrl, "https://www.facebook.com/VirginiaHighlands", "Facebook")}
 &nbsp;
