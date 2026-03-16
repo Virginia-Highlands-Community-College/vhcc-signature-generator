@@ -13,7 +13,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url(/assets/bg2.jpg);
+  background-image: url(https://virginia-highlands-community-college.github.io/vhcc-signature-generator/assets/bg2.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
