@@ -147,9 +147,16 @@
               for="bookingsUrl"
               class="block text-sm font-medium text-gray-700"
               >Microsoft Bookings URL
-              <span class="help-icon" tabindex="0">
+              <button
+                type="button"
+                class="help-icon"
+                aria-label="Help: Where to find your Microsoft Bookings URL"
+                aria-describedby="bookings-tooltip"
+              >
                 <svg
                   class="w-4 h-4 text-gray-500"
+                  aria-hidden="true"
+                  focusable="false"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -160,12 +167,13 @@
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-                <span class="tooltip">
+                <span id="bookings-tooltip" role="tooltip" class="tooltip">
                   <strong>Where to find your Bookings URL:</strong><br />
                   1. Go to
                   <a
                     href="https://outlook.office.com/bookings"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="underline"
                     style="color: #60a5fa"
                     >outlook.office.com/bookings</a
@@ -174,7 +182,7 @@
                   3. Click "Share" or "Booking page"<br />
                   4. Copy the public booking page URL
                 </span>
-              </span>
+              </button>
             </label>
             <input
               type="url"
@@ -267,6 +275,9 @@
         </button>
         <div
           id="message-box"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
           class="mt-4 p-3 bg-green-100 text-green-800 rounded-md text-sm transition-all duration-300 opacity-0 transform scale-95"
         >
           Signature copied to clipboard!
@@ -288,6 +299,8 @@
             </span>
             <svg
               class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              aria-hidden="true"
+              focusable="false"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -345,6 +358,8 @@
             </span>
             <svg
               class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              aria-hidden="true"
+              focusable="false"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -404,6 +419,8 @@
             >
             <svg
               class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              aria-hidden="true"
+              focusable="false"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -457,6 +474,8 @@
             <span class="text-sm font-medium text-gray-700">Outlook Web</span>
             <svg
               class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              aria-hidden="true"
+              focusable="false"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -485,6 +504,7 @@
                   <a
                     href="https://outlook.office.com"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="text-indigo-600 underline"
                     >outlook.office.com</a
                   >
@@ -523,6 +543,8 @@
             >
             <svg
               class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              aria-hidden="true"
+              focusable="false"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

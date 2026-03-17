@@ -12,7 +12,22 @@ const AccordionManager = {
     const accordionButtons = document.querySelectorAll(
       "[data-accordion-toggle]",
     );
-    accordionButtons.forEach((button) => {
+    accordionButtons.forEach((button, index) => {
+      const contentId = button.getAttribute("data-accordion-toggle");
+      const content = document.getElementById(contentId);
+
+      if (content) {
+        if (!button.id) {
+          button.id = `accordion-button-${index + 1}`;
+        }
+
+        button.setAttribute("aria-controls", contentId);
+        button.setAttribute("aria-expanded", "false");
+        content.setAttribute("role", "region");
+        content.setAttribute("aria-labelledby", button.id);
+        content.setAttribute("aria-hidden", "true");
+      }
+
       button.addEventListener("click", () => this.toggleAccordion(button));
     });
   },
@@ -28,9 +43,13 @@ const AccordionManager = {
 
     if (isOpen) {
       content.style.maxHeight = "0px";
+      button.setAttribute("aria-expanded", "false");
+      content.setAttribute("aria-hidden", "true");
       if (chevron) chevron.style.transform = "rotate(0deg)";
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
+      button.setAttribute("aria-expanded", "true");
+      content.setAttribute("aria-hidden", "false");
       if (chevron) chevron.style.transform = "rotate(180deg)";
     }
   },
@@ -195,6 +214,7 @@ ${this.makeSocialLink(linkedInURL, "https://www.linkedin.com/school/virginia-hig
   },
 
   showMessageBox() {
+    this.messageBox.textContent = "Signature copied to clipboard!";
     this.messageBox.style.opacity = "1";
     this.messageBox.style.transform = "scale(1)";
     setTimeout(() => {
