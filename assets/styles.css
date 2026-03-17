@@ -1,11 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap");
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "PT Sans", sans-serif;
   background-color: #f3f4f6;
   color: #1f2937;
   position: relative;
   isolation: isolate;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+
+label {
+  font-family: "PT Sans", sans-serif;
 }
 
 /* Keep effects on the backdrop only so foreground UI remains sharp. */
