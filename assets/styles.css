@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap");
 
 body {
-  font-family: "PT Sans", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   background-color: #f3f4f6;
   color: #1f2937;
   position: relative;
@@ -18,7 +18,7 @@ h6 {
 }
 
 label {
-  font-family: "PT Sans", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 /* Keep effects on the backdrop only so foreground UI remains sharp. */
