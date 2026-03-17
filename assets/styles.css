@@ -3,7 +3,7 @@
 body {
   font-family: "Source Sans 3", sans-serif;
   background-color: #f3f4f6;
-  color: #1f2937;
+  color: #131313;
   position: relative;
   isolation: isolate;
 }
@@ -34,19 +34,19 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(4px);
+  filter: blur(6px);
   transform: scale(1.03);
   z-index: -2;
 }
 
-body::after {
+/* body::after {
   content: "";
   position: fixed;
   inset: 0;
   background: rgba(17, 24, 39, 0.45);
   z-index: -1;
   pointer-events: none;
-}
+} */
 
 .help-icon {
   position: relative;

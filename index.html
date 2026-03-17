@@ -16,7 +16,7 @@
     />
   </head>
   <body class="bg-gray-100 text-gray-900 p-6 min-h-screen">
-    <div class="bg-white rounded-xl shadow-2xl p-8 max-w-7xl w-full mx-auto">
+    <div class="bg-white/95 rounded-xl shadow-2xl p-8 max-w-7xl w-full mx-auto">
       <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 border-b border-gray-200 pb-6 mb-6 text-center sm:text-left">
         <img src="assets/VHCC-logo.png" alt="VHCC Logo" class="h-10 sm:h-14" />
         <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">Email Signature Generator</h1>
@@ -26,7 +26,7 @@
       <!-- Input Form Section -->
       <div class="w-full">
         <h2 class="text-2xl font-bold mb-4 text-gray-800">
-          Step 1 - Generate Your Signature
+          <strong class="font-bold text-[#487abb]">Step 1</strong> - Generate Your Signature
         </h2>
         <p class="text-gray-600 mb-6">
           Enter your information below to create your professional email
@@ -242,7 +242,7 @@
 
           <button
             type="submit"
-            class="w-full px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition-colors focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            class="w-full px-4 py-2 bg-[#0b2439] text-white font-semibold rounded-md hover:bg-[#12344f] transition-colors focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             Generate Signature
           </button>
@@ -255,7 +255,7 @@
           id="step2-heading"
           class="text-2xl font-bold mb-4 text-gray-800 self-start"
         >
-          Step 2 - Preview and Copy
+          <strong class="font-bold text-[#487abb]">Step 2</strong> - Preview and Copy
         </h2>
         <div
           id="signature-preview"
@@ -268,7 +268,7 @@
         </div>
         <button
           id="copy-button"
-          class="w-full px-4 py-2 bg-green-700 text-white font-semibold rounded-md hover:bg-green-800 transition-colors focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          class="w-full px-4 py-2 bg-[#0b2439] text-white font-semibold rounded-md hover:bg-[#12344f] transition-colors focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
           style="display: none"
         >
           Copy to Clipboard
@@ -287,12 +287,12 @@
       <!-- Help Section -->
       <div class="w-full">
         <h2 class="text-2xl font-bold text-gray-800 mb-4">
-          Step 3 - Add Your Signature and Update Font
+          <strong class="font-bold text-[#487abb]">Step 3</strong> - Add Your Signature and Update Font
         </h2>
 
           <button
             data-accordion-toggle="help-windows-new"
-            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            class="w-full flex items-center justify-between p-4 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <span class="text-sm font-medium text-gray-700">
               Outlook Windows (New)
@@ -319,11 +319,11 @@
             class="overflow-hidden transition-all duration-300 max-h-0"
           >
             <div
-              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+              class="p-4 bg-white border border-gray-300 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
             >
               <p class="font-bold text-gray-800">Add your signature</p>
               <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                <li>Copy your signature using the button above</li>
+                <li>Copy your signature using the button in Step 2</li>
                 <li>
                   Open <strong>⚙️ Settings</strong> → <strong>Account</strong> →
                   <strong>Signatures</strong>
@@ -351,7 +351,7 @@
 
           <button
             data-accordion-toggle="help-windows-classic"
-            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
+            class="w-full flex items-center justify-between p-4 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
           >
             <span class="text-sm font-medium text-gray-700">
               Outlook Windows (Classic)
@@ -378,11 +378,11 @@
             class="overflow-hidden transition-all duration-300 max-h-0"
           >
             <div
-              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+              class="p-4 bg-white border border-gray-300 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
             >
               <p class="font-bold text-gray-800">Add your signature</p>
               <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                <li>Copy your signature using the button above</li>
+                <li>Copy your signature using the button in Step 2</li>
                 <li>
                   Go to <strong>File</strong> → <strong>Options</strong> →
                   <strong>Mail</strong>
@@ -412,7 +412,7 @@
 
           <button
             data-accordion-toggle="help-mac"
-            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
+            class="w-full flex items-center justify-between p-4 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
           >
             <span class="text-sm font-medium text-gray-700"
               >Outlook Mac</span
@@ -439,11 +439,11 @@
             class="overflow-hidden transition-all duration-300 max-h-0"
           >
             <div
-              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+              class="p-4 bg-white border border-gray-300 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
             >
               <p class="font-bold text-gray-800">Add your signature</p>
               <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                <li>Copy your signature using the button above</li>
+                <li>Copy your signature using the button in Step 2</li>
                 <li>
                   In Outlook, open <strong>Outlook</strong> →
                   <strong>Settings</strong> → <strong>Signatures</strong>
@@ -469,7 +469,7 @@
 
           <button
             data-accordion-toggle="help-web"
-            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
+            class="w-full flex items-center justify-between p-4 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
           >
             <span class="text-sm font-medium text-gray-700">Outlook Web</span>
             <svg
@@ -494,11 +494,11 @@
             class="overflow-hidden transition-all duration-300 max-h-0"
           >
             <div
-              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+              class="p-4 bg-white border border-gray-300 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
             >
               <p class="font-bold text-gray-800">Add your signature</p>
               <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                <li>Copy your signature using the button above</li>
+                <li>Copy your signature using the button in Step 2</li>
                 <li>
                   Go to
                   <a
@@ -536,7 +536,7 @@
 
           <button
             data-accordion-toggle="help-android"
-            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
+            class="w-full flex items-center justify-between p-4 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
           >
             <span class="text-sm font-medium text-gray-700"
               >Outlook iOS/Android</span
@@ -563,10 +563,11 @@
             class="overflow-hidden transition-all duration-300 max-h-0"
           >
             <div
-              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+              class="p-4 bg-white border border-gray-300 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
             >
               <p class="font-bold text-gray-800">Add your signature</p>
               <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>Copy your signature using the button in Step 2</li>
                 <li>
                   In Outlook Android, open your profile icon → ⚙️
                   <strong>Settings</strong>
