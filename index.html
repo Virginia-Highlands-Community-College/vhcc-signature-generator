@@ -273,16 +273,18 @@
 
         <!-- Help Section -->
         <div class="w-full mt-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-3">
+            Add Your Signature and Set Your Font
+          </h3>
+
           <button
-            id="help-toggle"
-            data-accordion-toggle="help-content"
+            data-accordion-toggle="help-windows-new"
             class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <span class="text-sm font-medium text-gray-700">
-              How to add signature to Outlook
+              Outlook Windows (New)
             </span>
             <svg
-              id="help-chevron"
               class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
               fill="none"
               stroke="currentColor"
@@ -298,95 +300,45 @@
             </svg>
           </button>
           <div
-            id="help-content"
+            id="help-windows-new"
             class="overflow-hidden transition-all duration-300 max-h-0"
           >
-            <div class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700">
-              <div class="space-y-4">
-                <!-- Outlook Desktop Instructions -->
-                <div>
-                  <h3 class="font-bold text-gray-800 mb-2">
-                    Outlook Desktop (Windows/Mac)
-                  </h3>
-                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                    <li>Copy your signature using the button above</li>
-                    <li>
-                      Open Outlook and go to <strong>File</strong> →
-                      <strong>Options</strong> → <strong>Mail</strong>
-                    </li>
-                    <li>Click <strong>Signatures...</strong></li>
-                    <li>
-                      Click <strong>New</strong> to create a new signature
-                    </li>
-                    <li>Give it a name (e.g., "VHCC Signature")</li>
-                    <li>
-                      Click in the signature editor and press
-                      <strong>Ctrl+V</strong> (or <strong>Cmd+V</strong> on Mac)
-                      to paste
-                    </li>
-                    <li>
-                      Set as default for new messages and replies/forwards
-                    </li>
-                    <li>Click <strong>OK</strong> to save</li>
-                  </ol>
-                </div>
-                <!-- Outlook Web Instructions -->
-                <div>
-                  <h3 class="font-bold text-gray-800 mb-2">
-                    Outlook on the Web
-                  </h3>
-                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                    <li>Copy your signature using the button above</li>
-                    <li>
-                      Go to
-                      <a
-                        href="https://outlook.office.com"
-                        target="_blank"
-                        class="text-indigo-600 underline"
-                        >outlook.office.com</a
-                      >
-                    </li>
-                    <li>
-                      Click the <strong>⚙️ Settings</strong> gear icon (top
-                      right)
-                    </li>
-                    <li>
-                      Search for "Email signature" or go to
-                      <strong>Account</strong> →
-                      <strong>Signatures</strong>
-                    </li>
-                    <li>
-                      Click Add signature and give it a name (e.g., "VHCC
-                      Signature")
-                    </li>
-                    <li>
-                      In the text box, press <strong>Ctrl+V</strong> (or
-                      <strong>Cmd+V</strong> on Mac) to paste
-                    </li>
-                    <li>
-                      Enable Set default for new messages (and Set default for
-                      replies and forwards, if desired). Uncheck "Include a link
-                      to my bookings page" if you entered your Bookings URL in
-                      the generator.
-                    </li>
-                    <li>Click <strong>Save</strong></li>
-                  </ol>
-                </div>
-              </div>
+            <div
+              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+            >
+              <p class="font-bold text-gray-800">Add your signature</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>Copy your signature using the button above</li>
+                <li>
+                  Open Outlook (New) and click <strong>⚙️ Settings</strong>
+                </li>
+                <li>
+                  Go to <strong>Accounts</strong> → <strong>Signatures</strong>
+                </li>
+                <li>Click <strong>New signature</strong> and name it</li>
+                <li>Paste with <strong>Ctrl+V</strong> and save</li>
+                <li>Set as default for new messages and replies/forwards</li>
+              </ol>
+              <p class="font-bold text-gray-800">Set your font</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>
+                  In <strong>Settings</strong>, open <strong>Mail</strong> →
+                  <strong>Compose and reply</strong>
+                </li>
+                <li>Set default compose font and size to your preference</li>
+                <li>Save changes</li>
+              </ol>
             </div>
           </div>
 
-          <!-- Font and Font Size Settings Accordion -->
           <button
-            id="font-toggle"
-            data-accordion-toggle="font-content"
-            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-4"
+            data-accordion-toggle="help-windows-classic"
+            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
           >
             <span class="text-sm font-medium text-gray-700">
-              Font settings for your email client
+              Outlook Windows (Classic)
             </span>
             <svg
-              id="font-chevron"
               class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
               fill="none"
               stroke="currentColor"
@@ -402,77 +354,239 @@
             </svg>
           </button>
           <div
-            id="font-content"
+            id="help-windows-classic"
             class="overflow-hidden transition-all duration-300 max-h-0"
           >
-            <div class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700">
-              <div class="space-y-4">
-                <p class="text-gray-600">
-                  To ensure your email displays correctly with the
-                  <strong>Arial 11pt</strong> font of the signature, adjust your
-                  email client settings:
-                </p>
+            <div
+              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+            >
+              <p class="font-bold text-gray-800">Add your signature</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>Copy your signature using the button above</li>
+                <li>
+                  Go to <strong>File</strong> → <strong>Options</strong> →
+                  <strong>Mail</strong>
+                </li>
+                <li>
+                  Click <strong>Signatures...</strong> then <strong>New</strong>
+                </li>
+                <li>Name it and paste with <strong>Ctrl+V</strong></li>
+                <li>Set defaults for new and reply/forward messages</li>
+                <li>Click <strong>OK</strong></li>
+              </ol>
+              <p class="font-bold text-gray-800">Set your font</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>
+                  Go to <strong>File</strong> → <strong>Options</strong> →
+                  <strong>Mail</strong>
+                </li>
+                <li>Click <strong>Stationery and Fonts...</strong></li>
+                <li>Set fonts for new mail and replies/forwards, then save</li>
+              </ol>
+            </div>
+          </div>
 
-                <!-- Outlook Web Settings -->
-                <div>
-                  <h3 class="font-bold text-gray-800 mb-2">
-                    Outlook on the Web
-                  </h3>
-                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                    <li>Go to <strong>Settings</strong> (gear icon)</li>
-                    <li>
-                      Select <strong>Mail</strong> →
-                      <strong>Compose and reply</strong>
-                    </li>
-                    <li>
-                      Under <strong>Compose messages</strong>, look for font
-                      settings
-                    </li>
-                    <li>Set the default font to <strong>Arial</strong></li>
-                    <li>Set the font size to <strong>11pt</strong></li>
-                    <li>Click <strong>Save</strong></li>
-                  </ol>
-                </div>
+          <button
+            data-accordion-toggle="help-web"
+            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
+          >
+            <span class="text-sm font-medium text-gray-700">Outlook Web</span>
+            <svg
+              class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="help-web"
+            class="overflow-hidden transition-all duration-300 max-h-0"
+          >
+            <div
+              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+            >
+              <p class="font-bold text-gray-800">Add your signature</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>Copy your signature using the button above</li>
+                <li>
+                  Go to
+                  <a
+                    href="https://outlook.office.com"
+                    target="_blank"
+                    class="text-indigo-600 underline"
+                    >outlook.office.com</a
+                  >
+                </li>
+                <li>
+                  Open <strong>⚙️ Settings</strong> and search for
+                  <strong>Email signature</strong>
+                </li>
+                <li>
+                  Add a new signature, paste with <strong>Ctrl+V</strong>, and
+                  save
+                </li>
+                <li>Set defaults for new messages and replies/forwards</li>
+              </ol>
+              <p class="font-bold text-gray-800">Set your font</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>
+                  Go to <strong>Mail</strong> →
+                  <strong>Compose and reply</strong>
+                </li>
+                <li>Set default compose font and size</li>
+                <li>Click <strong>Save</strong></li>
+              </ol>
+            </div>
+          </div>
 
-                <!-- Outlook Desktop Settings -->
-                <div>
-                  <h3 class="font-bold text-gray-800 mb-2">
-                    Outlook Desktop (Windows)
-                  </h3>
-                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                    <li>
-                      Open Outlook and go to <strong>File</strong> →
-                      <strong>Settings</strong>
-                    </li>
-                    <li>Click <strong>Mail</strong> on the left sidebar</li>
-                    <li>Click <strong>Compose and reply</strong></li>
-                    <li>
-                      Set font to <strong>Arial</strong> and size to
-                      <strong>11 pt</strong>
-                    </li>
-                    <li>Click <strong>OK</strong> to apply</li>
-                  </ol>
-                </div>
+          <button
+            data-accordion-toggle="help-mac"
+            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
+          >
+            <span class="text-sm font-medium text-gray-700">Outlook Mac</span>
+            <svg
+              class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="help-mac"
+            class="overflow-hidden transition-all duration-300 max-h-0"
+          >
+            <div
+              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+            >
+              <p class="font-bold text-gray-800">Add your signature</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>Copy your signature using the button above</li>
+                <li>
+                  In Outlook, open <strong>Outlook</strong> →
+                  <strong>Settings</strong> → <strong>Signatures</strong>
+                </li>
+                <li>
+                  Create a new signature and paste with <strong>Cmd+V</strong>
+                </li>
+                <li>Set defaults for new mail and replies/forwards</li>
+              </ol>
+              <p class="font-bold text-gray-800">Set your font</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>
+                  Go to <strong>Outlook</strong> → <strong>Settings</strong> →
+                  <strong>Fonts</strong>
+                </li>
+                <li>
+                  Set fonts for new messages, replies/forwards, and plain text
+                </li>
+                <li>Close settings to apply</li>
+              </ol>
+            </div>
+          </div>
 
-                <div>
-                  <h3 class="font-bold text-gray-800 mb-2">
-                    Outlook Desktop (Mac)
-                  </h3>
-                  <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                    <li>
-                      Open Outlook and go to
-                      <strong>Outlook</strong> → <strong>Settings</strong>
-                    </li>
-                    <li>Click <strong>Fonts</strong></li>
-                    <li>
-                      Set font to <strong>Arial</strong> and size to
-                      <strong>11 pt</strong> for both New mail, Reply/forward,
-                      and Preview.
-                    </li>
-                    <li>Click <strong>OK</strong> to apply</li>
-                  </ol>
-                </div>
-              </div>
+          <button
+            data-accordion-toggle="help-ios"
+            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
+          >
+            <span class="text-sm font-medium text-gray-700">Outlook iOS</span>
+            <svg
+              class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="help-ios"
+            class="overflow-hidden transition-all duration-300 max-h-0"
+          >
+            <div
+              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+            >
+              <p class="font-bold text-gray-800">Add your signature</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>
+                  In Outlook iOS, go to your profile icon →
+                  <strong>Settings</strong>
+                </li>
+                <li>Select your account and open <strong>Signature</strong></li>
+                <li>Paste or enter your mobile signature text</li>
+              </ol>
+              <p class="font-bold text-gray-800">Set your font</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>Outlook iOS uses app-defined compose formatting</li>
+                <li>If available, adjust compose format in app settings</li>
+              </ol>
+            </div>
+          </div>
+
+          <button
+            data-accordion-toggle="help-android"
+            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
+          >
+            <span class="text-sm font-medium text-gray-700"
+              >Outlook Android</span
+            >
+            <svg
+              class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            id="help-android"
+            class="overflow-hidden transition-all duration-300 max-h-0"
+          >
+            <div
+              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
+            >
+              <p class="font-bold text-gray-800">Add your signature</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>
+                  In Outlook Android, open your profile icon →
+                  <strong>Settings</strong>
+                </li>
+                <li>Select your account and open <strong>Signature</strong></li>
+                <li>Paste or enter your mobile signature text</li>
+              </ol>
+              <p class="font-bold text-gray-800">Set your font</p>
+              <ol class="list-decimal list-inside space-y-1.5 ml-2">
+                <li>Outlook Android uses app-defined compose formatting</li>
+                <li>If available, adjust compose format in app settings</li>
+              </ol>
             </div>
           </div>
         </div>
