@@ -15,20 +15,20 @@
       type="image/vnd.microsoft.icon"
     />
   </head>
-  <body
-    class="bg-gray-100 text-gray-900 p-6 flex items-center justify-center min-h-screen"
-  >
-    <div
-      class="bg-white rounded-xl shadow-2xl p-8 max-w-4xl w-full flex flex-col lg:flex-row gap-8"
-    >
-      <!-- Input Form Section -->
-      <div class="w-full lg:w-1/2">
-        <img src="assets/VHCC-logo.png" alt="VHCC Logo" class="h-16 mb-6" />
+  <body class="bg-gray-100 text-gray-900 p-6 min-h-screen">
+    <div class="bg-white rounded-xl shadow-2xl p-8 max-w-7xl w-full mx-auto">
+      <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 border-b border-gray-200 pb-6 mb-6 text-center sm:text-left">
+        <img src="assets/VHCC-logo.png" alt="VHCC Logo" class="h-10 sm:h-14" />
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">Email Signature Generator</h1>
+      </div>
 
-        <h1 class="text-3xl font-bold mb-6 text-gray-800">
-          Email Signature Generator
-        </h1>
-        <p class="text-gray-600 mb-8">
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+      <!-- Input Form Section -->
+      <div class="w-full">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">
+          Step 1 - Generate Your Signature
+        </h2>
+        <p class="text-gray-600 mb-6">
           Enter your information below to create your professional email
           signature. Once generated, you can copy the signature and paste it
           into your email client's settings.
@@ -242,11 +242,12 @@
       </div>
 
       <!-- Preview and Copy Section -->
-      <div
-        class="w-full lg:w-1/2 flex flex-col items-center lg:sticky lg:top-6 lg:self-start"
-      >
-        <h2 class="text-2xl font-bold mb-4 text-gray-800 self-start">
-          Signature Preview
+      <div class="w-full flex flex-col items-center">
+        <h2
+          id="step2-heading"
+          class="text-2xl font-bold mb-4 text-gray-800 self-start"
+        >
+          Step 2 - Preview and Copy
         </h2>
         <div
           id="signature-preview"
@@ -270,12 +271,13 @@
         >
           Signature copied to clipboard!
         </div>
+      </div>
 
-        <!-- Help Section -->
-        <div class="w-full mt-6">
-          <h3 class="text-xl font-bold text-gray-800 mb-3">
-            Add Your Signature and Set Your Font
-          </h3>
+      <!-- Help Section -->
+      <div class="w-full">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          Step 3 - Add Your Signature and Update Font
+        </h2>
 
           <button
             data-accordion-toggle="help-windows-new"
@@ -398,7 +400,7 @@
             class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
           >
             <span class="text-sm font-medium text-gray-700"
-              >Outlook Mac - In Progress</span
+              >Outlook Mac</span
             >
             <svg
               class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
@@ -441,7 +443,7 @@
                   <strong>Fonts</strong>
                 </li>
                 <li>
-                  Set fonts for new messages, replies/forwards, and plain text
+                  Set fonts to <strong>Arial</strong> size <strong>11</strong> for new messages and replies/forwards
                 </li>
                 <li>Close settings to apply</li>
               </ol>
@@ -513,57 +515,11 @@
           </div>
 
           <button
-            data-accordion-toggle="help-ios"
-            class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
-          >
-            <span class="text-sm font-medium text-gray-700"
-              >Outlook iOS - In Progress</span
-            >
-            <svg
-              class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              ></path>
-            </svg>
-          </button>
-          <div
-            id="help-ios"
-            class="overflow-hidden transition-all duration-300 max-h-0"
-          >
-            <div
-              class="p-4 bg-gray-50 rounded-b-lg mt-1 text-sm text-gray-700 space-y-3"
-            >
-              <p class="font-bold text-gray-800">Add your signature</p>
-              <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                <li>
-                  In Outlook iOS, go to your profile icon →
-                  <strong>Settings</strong>
-                </li>
-                <li>Select your account and open <strong>Signature</strong></li>
-                <li>Paste or enter your mobile signature text</li>
-              </ol>
-              <p class="font-bold text-gray-800">Set your font</p>
-              <ol class="list-decimal list-inside space-y-1.5 ml-2">
-                <li>Outlook iOS uses app-defined compose formatting</li>
-                <li>Paste your signature from the signature generator</li>
-              </ol>
-            </div>
-          </div>
-
-          <button
             data-accordion-toggle="help-android"
             class="w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 mt-3"
           >
             <span class="text-sm font-medium text-gray-700"
-              >Outlook Android</span
+              >Outlook iOS/Android</span
             >
             <svg
               class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
@@ -593,7 +549,7 @@
                   In Outlook Android, open your profile icon → ⚙️
                   <strong>Settings</strong>
                 </li>
-                <li>Open <strong>Signature</strong>.</li>
+                <li>Open <strong>Signature</strong></li>
                 <li>Paste your signature from the signature generator</li>
               </ol>
               <p class="font-bold text-gray-800">Set your font</p>
@@ -609,7 +565,6 @@
               </ol>
             </div>
           </div>
-        </div>
       </div>
     </div>
 

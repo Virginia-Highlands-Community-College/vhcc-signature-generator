@@ -21,6 +21,10 @@ label {
   font-family: "Source Sans 3", sans-serif;
 }
 
+#signature-form label {
+  font-weight: 700;
+}
+
 /* Keep effects on the backdrop only so foreground UI remains sharp. */
 body::before {
   content: "";

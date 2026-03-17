@@ -43,6 +43,7 @@ const SignatureGenerator = {
   init() {
     this.form = document.getElementById("signature-form");
     this.preview = document.getElementById("signature-preview");
+    this.step2Heading = document.getElementById("step2-heading");
     this.copyButton = document.getElementById("copy-button");
     this.messageBox = document.getElementById("message-box");
 
@@ -169,6 +170,10 @@ ${this.makeSocialLink(linkedInURL, "https://www.linkedin.com/school/virginia-hig
 
     this.preview.innerHTML = signatureHtml;
     this.copyButton.style.display = "block";
+
+    if (this.step2Heading) {
+      this.step2Heading.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   },
 
   copySignature() {
