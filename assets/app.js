@@ -64,7 +64,7 @@ const SignatureGenerator = {
       title: document.getElementById("title").value,
       unit: document.getElementById("unit").value,
       officeLocation: document.getElementById("officeLocation").value,
-      address1: document.getElementById("address1").value,
+      address1: document.getElementById("vhccMailingAddress").value,
       phone: document.getElementById("phone").value,
       email: document.getElementById("email").value,
       website: document.getElementById("website").value,
