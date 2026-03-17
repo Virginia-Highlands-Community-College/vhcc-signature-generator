@@ -34,7 +34,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(6px);
+  filter: blur(0px);
   transform: scale(1.03);
   z-index: -2;
 }
