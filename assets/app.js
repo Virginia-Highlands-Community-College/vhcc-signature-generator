@@ -83,7 +83,6 @@ const SignatureGenerator = {
       name: document.getElementById("name").value,
       title: document.getElementById("title").value,
       unit: document.getElementById("unit").value,
-      officeLocation: document.getElementById("officeLocation").value,
       address1: document.getElementById("vhccMailingAddress").value,
       phone: document.getElementById("phone").value,
       email: document.getElementById("email").value,
@@ -131,7 +130,6 @@ const SignatureGenerator = {
       name,
       title,
       unit,
-      officeLocation,
       address1,
       phone,
       email,
@@ -150,10 +148,6 @@ const SignatureGenerator = {
       ? website.replace(/^https?:\/\//, "")
       : "www.vhcc.edu";
 
-    const officeLine = officeLocation
-      ? `<span style="${font}">office:</span> <span style="${font}">${officeLocation}</span><br>`
-      : "";
-
     const bookingsLine = bookingsUrl
       ? `<span style="${font}">book a meeting:</span> ${this.makeLink(bookingsUrl, "Schedule with me")}<br>`
       : "";
@@ -164,12 +158,12 @@ const SignatureGenerator = {
     // Tables in email signatures cause Outlook Web to inject
     // a contrasting background wrapper in both light and dark mode.
     return `<div style="${font}">
-<span style="${font} ${s.name}">${name}</span><br>
+<span style="${font} ${s.name} ${s.bold}">${name}</span><br>
 <span style="${font}">${title}</span><br>
 ${unitLine}<span style="${font}">Virginia Highlands Community College</span><br>
   <span style="${font}">${address1 || "P.O. Box 828, Abingdon, VA 24212"}</span><br>
 <br>
-${officeLine}<span style="${font}">phone:</span> <span style="${font}">${phone || ""}</span><br>
+<span style="${font}">phone:</span> <span style="${font}">${phone || ""}</span><br>
 <span style="${font}">email:</span> ${this.makeLink("mailto:" + email, email)}<br>
 <span style="${font}">web:</span> ${this.makeLink(webUrl, webDisplay)}<br>
 ${bookingsLine}<br>
