@@ -83,7 +83,6 @@ const SignatureGenerator = {
       name: document.getElementById("name").value,
       title: document.getElementById("title").value,
       unit: document.getElementById("unit").value,
-      address1: document.getElementById("vhccMailingAddress").value,
       phone: document.getElementById("phone").value,
       email: document.getElementById("email").value,
       website: document.getElementById("website").value,
@@ -130,7 +129,6 @@ const SignatureGenerator = {
       name,
       title,
       unit,
-      address1,
       phone,
       email,
       website,
@@ -161,7 +159,7 @@ const SignatureGenerator = {
 <span style="${font} ${s.name} ${s.bold}">${name}</span><br>
 <span style="${font}">${title}</span><br>
 ${unitLine}<span style="${font}">Virginia Highlands Community College</span><br>
-  <span style="${font}">${address1 || "P.O. Box 828, Abingdon, VA 24212"}</span><br>
+  <span style="${font}">P.O. Box 828, Abingdon, VA 24212</span><br>
 <br>
 <span style="${font}">phone:</span> <span style="${font}">${phone || ""}</span><br>
 <span style="${font}">email:</span> ${this.makeLink("mailto:" + email, email)}<br>
