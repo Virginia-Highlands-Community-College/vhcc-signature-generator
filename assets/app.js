@@ -169,9 +169,10 @@ ${this.makeSocialLink(facebookUrl, "https://www.facebook.com/VirginiaHighlands",
 &nbsp;
 ${this.makeSocialLink(instagramURL, "https://www.instagram.com/virginiahighlands_cc", "Instagram")}
 &nbsp;
-${this.makeSocialLink(linkedInURL, "https://www.linkedin.com/school/virginia-highlands-community-college/", "LinkedIn")}<br>
-<br>
-<img src="https://vccs-vhcc.github.io/email-sig-gen/assets/logo.png" alt="Virginia Highlands Community College" width="250" style="width: 250px; max-width: 100%; display: block;">
+${this.makeSocialLink(linkedInURL, "https://www.linkedin.com/school/virginia-highlands-community-college/", "LinkedIn")}<br><br>
+</div>
+<div style="line-height: normal;">
+<img src="https://vccs-vhcc.github.io/email-sig-gen/assets/logo.png" alt="Virginia Highlands Community College" width="250" style="width: 250px; max-width: 100%; display: block; margin-top: 10px;">
 </div>`;
   },
 
